@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Bioinformatics — CSV Animation</title>
+    <title>Bioinformatics — E.Coli (Mobile)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <meta itemprop="name" content="Bioinformatics — CSV Animation">
+    <meta itemprop="name" content="Bioinformatics — E.Coli (Mobile)">
     <meta itemprop="description" content="made with cables">
     <meta itemprop="image" content="screenshot.png">
     <meta name="description" content="made with cables" />
@@ -58,13 +58,21 @@
 
 <body>
     <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
-    <footer>
-        made with <a href='https://cables.gl'>cables</a>
-        <!-- we would greatly appreciate if you link cables somewhere on your site! and tell us your website! thanks <3 :) -->
-    </footer>
+
 
     <libs/>
-    <script type="text/javascript" src="js/patch.js" async></script>
+
+    <script>
+
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        document.write("<script type='text/javascript' src='js/patch_mobile.js' async>"+"</"+"script>")
+        }else{
+        // false for not mobile device
+        document.write("<script type='text/javascript' src='js/patch_desktop.js' async>"+"</"+"script>")
+        }
+
+    </script>
     <corelibs/>
 
     <script>
